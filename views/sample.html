@@ -1,5 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head></head>
-  <body></body>
+  <head>
+    <title>NetLogo Web Logging Example</title>
+    <link rel="icon" href="data:,">
+  </head>
+  <body>
+    <p>Here is the logging example.</p>
+    <iframe id="modelContainer" src="https://netlogoweb.org/web?relayIframeEvents&url=https%3A%2F%2Fnetlogoweb.org%2Fassets%2Fmodelslib%2FSample+Models%2FBiology%2FFlocking.nlogo"></iframe>
+    <div id="loggingConsole">
+      Nothing logged yet...
+    </div>
+
+    <script type="text/javascript" src="../src/query-maker.js"></script>
+    <script type="text/javascript" src="../src/logging.js"></script>
+    <script type="text/javascript">
+      modelContainer = document.getElementById("modelContainer");
+      const listenForResizeEvents = (e) => {
+        if (e.data.type === 'nlw-resize') {
+          modelContainer.width = e.data.width + 10;
+          modelContainer.height = e.data.height + 10;
+        }
+      }
+
+      window.addEventListener("message", listenForWindowEvents(modelContainer, loggingConsole));
+      window.addEventListener("message", listenForResizeEvents);
+      listenForQueryResponses();
+    </script>
+  </body>
 </html>
