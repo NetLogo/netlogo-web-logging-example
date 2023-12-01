@@ -1,0 +1,14 @@
+{
+  "name": "netlogo-web-logging-example",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LaCuneta/netlogo-web-logging-example.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "homepage": "https://github.com/LaCuneta/netlogo-web-logging-example#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
