@@ -16,7 +16,7 @@ The full list of events and the extra data (`eventArgs` in the actual message) t
 
 If you want to get data from a running model, use queries.  If you run a model page in an `iframe`, if will automatically activate an iframe query listener that will answer back.  All you need to do is add a query maker.  You can copy [the `debug-query-maker.coffee` from Galapagos](https://github.com/NetLogo/Galapagos/blob/master/app/assets/javascripts/queries/debug-query-maker.coffee) as we did in this example.
 
-Queries let you get data only at certain times, say when a user clicks a button widget in the model, and also let you get at in-model data that events don't yet cover (like turtles, patches, globals, etc).
+Queries let you get data only at certain times, say when a user clicks a button widget in the model, and also let you get at in-model data that events don't yet cover (like turtles, patches, globals, etc).  The best listing of things that can be queried is in [the `iframe-query-handler.coffee` from Galapagos](https://github.com/NetLogo/Galapagos/blob/master/app/assets/javascripts/queries/iframe-query-handler.coffee).
 
 Query responses are asynchronous with the model, meaning if you send a query after receiving an event, other things can have occured in the model in the meantime.  Practially it's unlikely this will be too big of a deal unless you need millisecond precision in the query results.
 
